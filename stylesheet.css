@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Orbitron&family=Roboto&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
 .calculator {
     text-align: center;
     margin: 0 auto;
-    padding-top: 200px;
+    padding: 100px 0;
     width: 400px;
 }
 
@@ -27,7 +32,7 @@
 
 button {
     height: 80px;
-    background-color: gray;
+    background-color: #323437;
     border: 1px solid black;
     font-size: 32px;
     color: #fff;
@@ -39,14 +44,27 @@ button {
     width: 50%;
 }
 
-.operator, .equal-sign {
-    background-color: orange;
+.operator, .all-clear, .del, .percentage {
+    background-color: #323437;
+    color: #e2b714;
 }
 
-button:hover {
-    background-color: darkgray;
+.equal-sign {
+    background-color: #e2b714;
+    color: #323437;
 }
 
-.operator:hover, .equal-sign:hover {
-    background-color: darkorange;
+button:active {
+    background-color: #646669;
 }
+
+.operator:active, .all-clear:active, .del:active, .percentage:active {
+    background-color: #646669;
+    color: #323437;
+}
+
+.equal-sign:active {
+    background-color: #646669;
+    color: #fff;
+}
+
