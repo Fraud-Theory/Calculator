@@ -118,7 +118,8 @@ const inputDecimal = (dot) => {
 }
 
 const inputPercentage = () => {
-    if(currentNumber.includes('%')) {
+    if(currentNumber === '0') {
+        currentNumber = '0'
         return
     }
     currentNumber = currentNumber/100
