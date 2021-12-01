@@ -22,47 +22,56 @@ let currentNumber = '0'
 numbers.forEach((number) => {
     number.addEventListener("click", (event) => {
         inputNumber(event.target.value)
-        updateScreen(currentNumber)
+        updateScreen()
     })
 })
 
 operators.forEach((operator) => {
     operator.addEventListener("click", (event) => {
         inputOperator(event.target.value)
+        currentNumber=''
+        updateScreen()
     })
 })
 
 equalSign.addEventListener("click", () => {
     calculate()
-    updateScreen(currentNumber)
+    prevNumber = ''
+    calculationOperator = ''
+    updateScreen()
 })
 
 clearBtn.addEventListener("click", () => {
     clearAll ()
-    updateScreen(currentNumber)
+    updateScreen()
 })
 
 decimal.addEventListener("click", (event) => {
     inputDecimal(event.target.value)
-    updateScreen(currentNumber)
+    updateScreen()
 })
 
 percentageBtn.addEventListener("click", () => {
     inputPercentage()
-    updateScreen(currentNumber)
+    updateScreen()
 })
 
 deleteBtn.addEventListener("click", () => {
     deleting()
-    updateScreen(currentNumber)
+    updateScreen()
 })
 
 // --------------------------UPDATE SCREEN-------------------------------
 
-const updateScreen = (number) => {
-    calculatorScreen.value = number
+const updateScreen = () => {
+    calculatorScreen.value = screenContent();
 }
 
+const screenContent= () =>{
+    // creates a string containing the prevNumber the operator and the currentNumber
+    const content = `${prevNumber} ${calculationOperator} ${currentNumber}`
+    return content
+}
 
 // ---------------------------INPUT TOMBOL---------------------------------
 
